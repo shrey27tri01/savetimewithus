@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <title>Scrapbook for {{ day }}/{{ month }}/{{ year }}</title>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container">
+        <span style="height: 30px;display: block;"></span>
+        <h1>Scrapbook for {{ request.user.username }} on {{ day }}/{{ month }}/{{ year }}</h1>
+        <span style="height: 30px;display: block;"></span>
+        <div class="row">
+            {% for task in tasks %}
+                <div class="col-xs-1-12 col-md-3">
+                    <img src="{{ task.completed_picture.url }}" alt="scrapbook image" width="300px" height="300px">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
