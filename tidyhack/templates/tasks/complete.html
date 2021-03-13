@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+    <title>Complete {{ task.title }}</title>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container">
+        <span style="display: block;height: 30px;"></span>
+        <h1>Complete {{ task.title }}</h1>
+        <span style="display: block;height: 30px;"></span>
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <form method="post" enctype="multipart/form-data">
+                    <p>Upload the completed image for the given task</p>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-info" type="submit">Complete Task</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

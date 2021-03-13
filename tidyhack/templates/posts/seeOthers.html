@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>See What other's are doing</title>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container">
+        <span style="height: 30px;display: block;"></span>
+        <h1>See What others are doing:</h1>
+        <p class="caption">Join the <a href="#">Discord server</a> now.</p>
+        <span style="height: 30px;display: block;"></span>
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-xs-1-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Tasks for {{ post.title }}</h5>
+                          <!-- <h6 class="card-subtitle mb-2 text-muted"></h6> -->
+                          <ul class="card-text">
+                              {% for task in post.contentSeperation %}
+                                    <li>{{ task }}</li>
+                              {% endfor %}
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block head %}
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+{% endblock head %}
+
+
+{% block content %}
+    <span style="display: block;height: 60px;"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <h1 style="    font-family: 'Indie Flower', cursive; color:darkblue">Login</h1>
+                <p style="    font-family: 'Indie Flower', cursive;"> We won't share your details. Promise.</p>
+                <br>
+                {% if form.errors %}
+                    <p>
+                        Your username and password didn't match.
+                        Please try again.
+                    </p>
+                {% endif %}
+                <div class="login-form">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <br>
+                        <button class="btn btn-primary" type="submit">Log in</button>
+                    </form>
+                </div>
+                <p style="    font-family: 'Indie Flower', cursive;">Don't have an account? <a href="{% url 'signup' %}" style="text-decoration:none;">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

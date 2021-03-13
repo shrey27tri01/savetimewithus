@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>About the Devs</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+{% endblock head %}
+
+{% block content %}
+    <span style="display: block;height: 30px;"></span>
+    <div class="container">
+        <h1 style="font-family: 'Indie Flower', cursive; color:darkblue">About Us</h1>
+        <span style="display: block;height: 30px;"></span>
+        <div class="row">
+            <div class="col-xs-1-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{ prasanna.picture }}" alt="Developer Picture" width="50" height="300">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ prasanna.name }}</h4>
+                        <p class="card-text">{{ prasanna.position }}</p>
+                        <p><a href="{{ prasanna.gitlink }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-1-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{ vijay.picture }}" alt="Developer Picture" width="50" height="300">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ vijay.name }}</h4>
+                        <p class="card-text">{{ vijay.position }}</p>
+                        <p><a href="{{ vijay.gitlink }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-1-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{ shrey.picture }}" alt="Developer Picture" width="50" height="300">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ shrey.name }}</h4>
+                        <p class="card-text">{{ shrey.position }}</p>
+                        <p><a href="{{ shrey.gitlink }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+    <title>{{ request.user.username }}'s Scrapbook</title>
+{% endblock head %}
+
+
+{% block content %}
+    <span style="display: block;height: 30px;"></span>
+    <div class="container">
+        <h1>Enter Scrapbook Date</h1>
+        <span style="display: block;height: 30px;"></span>
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <br>
+                    <button type="submit" class="btn btn-primary">Enter Date</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

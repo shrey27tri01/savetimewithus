@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+    <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+{% endblock head %}
+
+
+
+{% block content %}
+    <div class="container">
+        <span style="height: 30px;display: block;"></span>
+        <h1 style="    font-family: 'Indie Flower', cursive; color:darkblue">Sign up for saveti.me</h1>
+        <p style="    font-family: 'Indie Flower', cursive; font-size: 4.5 rem;">Your details are safe with us.</p>
+        <br>
+        <div class="row">
+        <div class="col-xs-1-12 col-md-4">
+            <div class="float-left">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <br>
+                <input type="submit" value="Sign Up" class="btn btn-primary">
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock content %}

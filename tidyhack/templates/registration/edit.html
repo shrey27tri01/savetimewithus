@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+    <title>{{ request.user.username}}'s profile</title>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <span style="display: block;height: 66px;"></span>
+                <h1>Edit Your Account</h1>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ user_form|crispy }}
+                    {{ profile_form|crispy }}
+                    <br><br>
+                    <p><input type="submit" class="btn btn-primary" value="Save changes"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
