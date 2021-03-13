@@ -4,6 +4,8 @@
     <title>About the Devs</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
 {% endblock head %}
 
 {% block content %}
@@ -16,9 +18,14 @@
                 <div class="card">
                     <img class="card-img-top" src="{{ prasanna.picture }}" alt="Developer Picture" width="50" height="300">
                     <div class="card-body">
-                        <h4 class="card-title">{{ prasanna.name }}</h4>
-                        <p class="card-text">{{ prasanna.position }}</p>
+                        <h4 class="card-title" style=" font-size: 45px;
+                        background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">{{ prasanna.name }}</h4>
+                        <p class="card-text" style="    font-family: 'Press Start 2P', cursive;">{{ prasanna.position }}</p>
+                        <p class="card-text">{{ prasanna.desc }}</p>
                         <p><a href="{{ prasanna.gitlink }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a></p>
+                        
                     </div>
                 </div>
             </div>
@@ -26,8 +33,12 @@
                 <div class="card">
                     <img class="card-img-top" src="{{ vijay.picture }}" alt="Developer Picture" width="50" height="300">
                     <div class="card-body">
-                        <h4 class="card-title">{{ vijay.name }}</h4>
-                        <p class="card-text">{{ vijay.position }}</p>
+                        <h4 class="card-title" style=" font-size: 45px;
+                        background: -webkit-linear-gradient(45deg, #00ff95, #ec77ab 50%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">{{ vijay.name }}</h4>
+                        <p class="card-text" style="    font-family: 'Press Start 2P', cursive;">{{ vijay.position }}</p>
+                        <p class="card-text">{{ vijay.desc }}</p>
                         <p><a href="{{ vijay.gitlink }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a></p>
                     </div>
                 </div>
@@ -36,8 +47,12 @@
                 <div class="card">
                     <img class="card-img-top" src="{{ shrey.picture }}" alt="Developer Picture" width="50" height="300">
                     <div class="card-body">
-                        <h4 class="card-title">{{ shrey.name }}</h4>
-                        <p class="card-text">{{ shrey.position }}</p>
+                        <h4 class="card-title" style=" font-size: 45px;
+                        background: linear-gradient(45deg, #ec77ab 0%, #7873f5 60%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">{{ shrey.name }}</h4>
+                        <p class="card-text" style="    font-family: 'Press Start 2P', cursive;">{{ shrey.position }}</p>
+                        <p class="card-text">{{ shrey.desc }}</p>
                         <p><a href="{{ shrey.gitlink }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a></p>
                     </div>
                 </div>

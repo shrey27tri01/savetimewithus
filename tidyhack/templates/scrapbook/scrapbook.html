@@ -3,20 +3,76 @@
 
 {% block head %}
     <title>Scrapbook for {{ day }}/{{ month }}/{{ year }}</title>
+    <style>
+        
+        
+.container{
+    padding: 1em !important;
+    column-count: 4 !important;
+    position: relative !important;
+    
+}
+
+
+
+
+    img{
+        width: 100% !important;
+        margin-bottom: 1em !important;
+        background: linear-gradient(0deg #00000088 30%, #ffffff44 100%) !important;
+    }
+
+    @media(max-width: 800px){
+        .container{
+            column-count: 3 !important;
+        }
+    }
+
+    @media(max-width: 600px){
+        .container{
+            column-count: 2 !important;
+        }
+    }
+
+    @media(max-width: 400px){
+        .container{
+            column-count: 1 !important;
+        }
+    }
+
+
+
+#text
+{
+    z-index:100 !important;
+    position:relative  !important ;    
+    color:red !important;
+    font-size:24px !important;
+    font-weight:bold !important;
+    
+}
+
+
+
+    </style>
+    
+   
 {% endblock head %}
 
 
 {% block content %}
     <div class="container">
-        <span style="height: 30px;display: block;"></span>
-        <h1>Scrapbook for {{ request.user.username }} on {{ day }}/{{ month }}/{{ year }}</h1>
-        <span style="height: 30px;display: block;"></span>
-        <div class="row">
+    
+       
+        
             {% for task in tasks %}
-                <div class="col-xs-1-12 col-md-3">
-                    <img src="{{ task.completed_picture.url }}" alt="scrapbook image" width="300px" height="300px">
+                <div>
+                    <img src="{{ task.completed_picture.url }}" alt="scrapbook image" >
+                    <p id="text">
+                        {{ task.title }}
+                    </p>
                 </div>
             {% endfor %}
-        </div>
     </div>
+    
 {% endblock content %}

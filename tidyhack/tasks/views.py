@@ -9,11 +9,12 @@ from .forms import TaskForm,CompleteTaskForm,ScrapbookDateForm
 
 # helper utils
 class Developer():
-    def __init__(self,name,pos,pic,gitlink) -> None:
+    def __init__(self,name,pos,pic,gitlink,desc) -> None:
         self.name = name 
         self.position = pos
         self.picture = pic
         self.gitlink = gitlink
+        self.desc = desc
 
 
 
@@ -26,9 +27,9 @@ def homeView(request):
 
 
 def aboutView(request):
-    prasanna = Developer('R Prasannavenkatesh','Backend Dev','https://avatars0.githubusercontent.com/u/54119123?s=400&u=f08e1a3b2cb36bd9ebda9dd40f1c6c97f7ed3fa2&v=4','https://github.com/hanzohasashi33')
-    vijay = Developer('Vijay Jaisankar','Frontend Dev','https://avatars3.githubusercontent.com/u/56185979?s=400&u=65beb118f34e21c0acb0d56ed98f75b11e1647bc&v=4','https://github.com/vijay-jaisankar')
-    shrey = Developer('Shrey Tripathi','Full Stack Dev','https://avatars.githubusercontent.com/u/52366674?s=460&u=fa0b3dc026bd6167e892fffc7588455ff68ef972&v=4','https://github.com/shrey27tri01')
+    prasanna = Developer('R Prasanna','Backend Dev','https://avatars0.githubusercontent.com/u/54119123?s=400&u=f08e1a3b2cb36bd9ebda9dd40f1c6c97f7ed3fa2&v=4','https://github.com/hanzohasashi33','Wait for it...')
+    vijay = Developer('Vijay Jaisankar','Frontend Dev','https://avatars3.githubusercontent.com/u/56185979?s=400&u=65beb118f34e21c0acb0d56ed98f75b11e1647bc&v=4','https://github.com/vijay-jaisankar','This ice tea-driven developer can talk all day about python and why Linux is better than Windows.')
+    shrey = Developer('Shrey Tripathi','Full Stack Dev','https://avatars.githubusercontent.com/u/52366674?s=460&u=fa0b3dc026bd6167e892fffc7588455ff68ef972&v=4','https://github.com/shrey27tri01','I love football, novels and JavaScript.')
     context = {"prasanna":prasanna,"vijay":vijay,"shrey":shrey}
     return render(request,"about.html",context)
 

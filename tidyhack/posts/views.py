@@ -1,4 +1,5 @@
 from django.shortcuts import render
+#from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -8,12 +9,10 @@ from rest_framework import generics
 from datetime import date
 
 
-
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     
-
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
