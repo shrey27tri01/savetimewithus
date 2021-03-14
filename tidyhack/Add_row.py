@@ -1,3 +1,11 @@
+ASTRA_DB_ID="Enter id here"
+ASTRA_DB_REGION=asia-south1
+ASTRA_DB_KEYSPACE=task
+ASTRA_DB_APPLICATION_TOKEN="enter app token here"
+
+
+
+
 curl --request POST \
     --url https://${ASTRA_DB_ID}-${ASTRA_DB_REGION}.apps.astra.datastax.com/api/rest/v1/keyspaces/${ASTRA_DB_KEYSPACE}/tables/rest_example_products/rows \
     --header 'content-type: application/json' \
