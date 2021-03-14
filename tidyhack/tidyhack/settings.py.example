@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=l^1xgy*optou2ethtmck4zuxan=^m0$3q0gn0#by7-_s2)5fv'
+SECRET_KEY = 'ENTER YOUR SECRET KEY HERE'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,10 +48,12 @@ INSTALLED_APPS = [
     # local 
     'users',
     'tasks',
+    'posts',
 
     # 3rd party
     'crispy_forms',
     'django_cassandra_engine'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -93,8 +95,8 @@ DATABASES = {
         'ENGINE': 'django_cassandra_engine',
         'NAME': 'task',
         'TEST_NAME': 'task',
-        'USER': 'secret santa',
-        'PASSWORD': 'dfkncxlkjotriuoHKGSkjdsfkljdsXdsklfdfjk',
+        'USER': 'secret_santa',
+        'PASSWORD': 'ENTER PASSWORD HERE',
         'OPTIONS': {
              'replication': {
                  'strategy_class': 'SimpleStrategy',
@@ -104,7 +106,7 @@ DATABASES = {
                     'consistency': ConsistencyLevel.LOCAL_ONE,
                     'retry_connect': True,
                     'cloud': {
-                        'secure_connect_bundle': '/path/to/secure/bundle.zip'
+                        'secure_connect_bundle': 'ENTER PATH TO SECURE BUNDLE HERE'
                     },
                     # + All connection options for cassandra.cluster.Cluster()
              },
