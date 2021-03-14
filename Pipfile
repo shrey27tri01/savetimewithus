@@ -12,6 +12,7 @@ pillow = "*"
 cassandra-driver = "*"
 django-cassandra-engine = "*"
 djangorestframework = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.9"
