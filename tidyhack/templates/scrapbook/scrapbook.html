@@ -2,77 +2,96 @@
 
 
 {% block head %}
-    <title>Scrapbook for {{ day }}/{{ month }}/{{ year }}</title>
-    <style>
-        
-        
-.container{
-    padding: 1em !important;
-    column-count: 4 !important;
-    position: relative !important;
-    
-}
+<title>Scrapbook for {{ day }}/{{ month }}/{{ year }}</title>
+<style>
+    /* .container {
+        padding: 1em !important;
+        column-count: 4 !important;
+        position: relative !important;
+
+    }
 
 
 
 
-    img{
+    img {
         width: 100% !important;
         margin-bottom: 1em !important;
         background: linear-gradient(0deg #00000088 30%, #ffffff44 100%) !important;
     }
 
-    @media(max-width: 800px){
-        .container{
+    @media(max-width: 800px) {
+        .container {
             column-count: 3 !important;
         }
     }
 
-    @media(max-width: 600px){
-        .container{
+    @media(max-width: 600px) {
+        .container {
             column-count: 2 !important;
         }
     }
 
-    @media(max-width: 400px){
-        .container{
+    @media(max-width: 400px) {
+        .container {
             column-count: 1 !important;
         }
     }
 
 
 
-#text
-{
-    z-index:100 !important;
-    position:relative  !important ;    
-    color:red !important;
-    font-size:24px !important;
-    font-weight:bold !important;
-    
-}
+    #text {
+        z-index: 100 !important;
+        position: relative !important;
+        color: red !important;
+        font-size: 24px !important;
+        font-weight: bold !important;
+
+    } */
+    body {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50% ;
+        }
+
+        50% {
+            background-position: 100% 50% ;
+        }
+
+        100% {
+            background-position: 0% 50% ;
+        }
+    }
+
+    .card {
+
+    }
+</style>
 
 
-
-    </style>
-    
-   
 {% endblock head %}
 
 
 {% block content %}
-    <div class="container">
-    
-       
-        
-            {% for task in tasks %}
-                <div>
-                    <img src="{{ task.completed_picture.url }}" alt="scrapbook image" >
-                    <p id="text">
-                        {{ task.title }}
-                    </p>
-                </div>
-            {% endfor %}
+<span style="display: block;height: 30px;"></span>
+<div class="container">
+    <div class="row">
+        {% for task in tasks %}
+        <div class="card" style="width: 18rem;">
+            <span style="display: block;height: 10px;"></span>
+            <img src="{{ task.completed_picture.url }}" class="card-img-top" alt="scrapbook image">
+            <div class="card-body">
+                <h5 class="card-title">{{ task.title }}</h5>
+                <p class="card-text">{{ task.description }}</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    
+</div>
 {% endblock content %}
