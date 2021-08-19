@@ -6,6 +6,9 @@ from datetime import date
 
 client = commands.Bot(command_prefix= '.')
 
+# Put your discord API key here.
+discord_api_key = ""
+
 
 @client.event
 async def on_ready():
@@ -54,4 +57,4 @@ async def standup(ctx,tasks):
 
 
 
-client.run('ODE4NDAyODExOTA5MTExODA4.YEXjAw.xom7miqiXUIhm3C4rY2hQ3SrPTw')
+client.run(discord_api_key)
